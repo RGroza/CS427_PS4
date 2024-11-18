@@ -1,0 +1,29 @@
+Created new header files: Board.hpp, Pit.hpp, and Player.hpp
+
+Board.hpp:
+    - Implemented Board class:
+        - Created unique_ptr to manage "pitWarehouse" which contains an array of Pit objects
+        - Created "north" and "south" Player objects
+        - Board() constructor fills in the entries of the "pitWarehouse" array, starting from
+          the last south house "S<numHouses>" and ending at the north store "N0"
+        - While constructing the array, each Pit object in the array is linked to the correct
+          "next" and "opposite" pointers using the references to their respective array entries
+        - The operator<< function prints the Board "pitWarehouse" entries in order, by calling
+          each Pit object's operator<<.
+
+Pit.hpp:
+    - Implemented Pit class:
+        - Contains owner Player object, number, label, and pointers to next and opposite Pit objects
+        - Default constructor creates a temporary Pit object with uninitialized values
+        - Explicit constructor assigns the parameter values to their respective private members
+        - The operator<< function prints the Pit label along with the labels of the next and opposite
+          Pit objects using the pointers (if they exist). If either Pit does not exist, then it
+          prints " = nullptr"
+        - The class member for the number of seeds is not defined yet but will be in the future
+
+Player.hpp:
+    - Defined enum class Side to indicate either "Side::North" or "Side:South"
+    - Implemented Player struct:
+        - Contains members for Player side, name string, and label character
+        - Explicit constructor used to assign parameter values to members
+        - otherSide() function returns the Side enum value of the opposite side

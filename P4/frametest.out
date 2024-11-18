@@ -1,0 +1,27 @@
+
+----------------------------------------------------------------
+	Patience S. Goodenough
+	CPSC 427/527
+	Wed Nov  6 2024	01:36:53
+----------------------------------------------------------------
+Welcome to Mancala frame test!
+UnitTest constructor called
+Test circular connection of PitFrames
+Printing Board
+Starting pit S6
+pit[S6]: next->[S5], opposite->[N1]
+pit[S5]: next->[S4], opposite->[N2]
+pit[S4]: next->[S3], opposite->[N3]
+pit[S3]: next->[S2], opposite->[N4]
+pit[S2]: next->[S1], opposite->[N5]
+pit[S1]: next->[S0], opposite->[N6]
+pit[S0]: next->[N6], opposite = nullptr
+pit[N6]: next->[N5], opposite->[S1]
+pit[N5]: next->[N4], opposite->[S2]
+pit[N4]: next->[N3], opposite->[S3]
+pit[N3]: next->[N2], opposite->[S4]
+pit[N2]: next->[N1], opposite->[S5]
+pit[N1]: next->[N0], opposite->[S6]
+pit[N0]: next->[S6], opposite = nullptr
+Exiting Board::print()
+
