@@ -15,7 +15,7 @@ static string usage = "usage: kalah numHouses numSeeds";
 
 //-----------------------------------------------------------------------------
 int main(int argc, char* argv[]) {
-    cout << "Welcome to Kalah!" << endl << endl;
+    cout << "Welcome to Kalah!" << endl;
 
     if (argc != 3)
         fatal(usage);
@@ -28,7 +28,6 @@ int main(int argc, char* argv[]) {
     if (isatty(fileno(stdin))) {
         game.playGame(nullptr);
     } else {
-        cout << "Using file" << endl;
         while (std::getline(cin, line)) {
             istringstream iss(line);
             game.playGame(&iss);

@@ -24,21 +24,32 @@ public:
         return seeds;
     }
 
-    int getOpposite() {
-        return opposite->number;
+    Pit *getOpposite() {
+        return opposite;
     }
 
     void addSeed() {
         seeds++;
+        if (opposite == nullptr) {
+            owner->storeSeeds++;
+        } else {
+            owner->houseSeeds++;
+        }
     }
 
     void addSeeds(int s) {
         seeds += s;
+        if (opposite == nullptr) {
+            owner->storeSeeds += s;
+        } else {
+            owner->houseSeeds += s;
+        }
     }
 
     int removeSeeds() {
         int s = seeds;
-        s = 0;
+        seeds = 0;
+        owner->houseSeeds -= s;
         return s;
     }
 

@@ -9,8 +9,11 @@ struct Player {
     Side side;
     string name;
     char label;
+    int houseSeeds;
+    int storeSeeds;
 
-    Player(Side s, const string& n, char l) : side(s), name(n), label(l) {}
+    Player(Side s, const string& n, char l, int seeds) : side(s), name(n), label(l),
+                                                         houseSeeds(seeds), storeSeeds(0) {}
 
     Side otherSide() const {
         return (side == Side::North) ? Side::South : Side::North;
